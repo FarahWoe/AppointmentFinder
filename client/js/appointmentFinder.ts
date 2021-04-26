@@ -17,7 +17,7 @@ function loaddata() {
         type: "GET",
         url: "../server/serviceHandler.php",
         cache: false,
-        data: {method: "queryVotings", 
+        data: {method: "queryVotings"
         // param: searchterm
     },
         dataType: "json",
