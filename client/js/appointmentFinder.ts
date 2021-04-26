@@ -1,7 +1,6 @@
 //Starting point for JQuery init
 
-document.addEventListener('DOMContentLoaded', loaddata, false);
-alert("Test");
+
 // $(document).ready(function () {
     
 //     $("#btn_Search").click(function (e) {
@@ -11,25 +10,69 @@ alert("Test");
 // });
 
 
+
+// const fetchTimezones = async () => {
+//     const res = await fetch('../server/serviceHandler.php');
+//     const data = await res.json();
+//     console.log(data);
+//     return data;
+// }
+
+document.addEventListener('DOMContentLoaded', loaddata, false);
+
 function loaddata() {
 
-    $.ajax({
-        type: "GET",
-        url: "../server/serviceHandler.php",
-        cache: false,
-        data: {method: "queryVotings"
-        // param: searchterm
-    },
-        dataType: "json",
-        success: function (response) {
-            console.log("Verbindung mit Datenbank klappt");
-            $("#noOfentries").val(response.length);
-            $("#searchResult").show();
-        }
-        
-        
-    });
-
     console.log("load data, aber ohne data");
-}
+
+    $.get("../server/serviceHandler.php", function (data) {
+        console.log("get request");
+        $.each(JSON.parse(data), function (key, value) {
+            console.log("get request each");
+            var selectElement = document.createElement("div");
+            selectElement.innerHTML = value;
+           
+            document.getElementById("container")?.appendChild(selectElement);
+           
+        });
+    });
+};
+
+
+
+
+//     $.ajax({
+//         type: "GET",
+//         url: "../server/serviceHandler.php",
+//         cache: false,
+        
+//         data: {method: "queryVotings"
+//         // param: searchterm 
+//         }
+//         ,
+//         dataType: "json",
+//         success: function (response) {
+//             console.log("Verbindung mit Datenbank klappt");
+//             $("#noOfentries").val(response.length);
+//             $("#searchResult").show();
+//         }
+        
+//         // success: function (response) {
+//         //     console.log("Verbindung mit Datenbank klappt");
+// 		// 	$.each(response, function (key, value) {
+// 		// 		console.log(value.item, value.store);
+// 		// 		$("#entries").append("<p>" + value.notenumber + ": " + value.item + ", " + value.price + " Euro, " + value.store + "</p>");
+
+// 		// 	})
+// 		// }
+//         ,
+// 		error: function (response) {
+// 			console.log("Response ERROR");
+// 		}
+
+        
+//     });
+
+    
+// }
+
 
