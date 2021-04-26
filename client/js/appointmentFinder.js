@@ -1,12 +1,1 @@
 "use strict";
-var button = document.querySelector("button");
-var isGame = false;
-var imageList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var imageListSorted = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var gamefield = document.createElement("div");
-var PuzzlePieceOne = false;
-var PuzzlePieceTwo = false;
-var firstPuzzleImg = document.createElement("img");
-var secondPuzzleImg = document.createElement("img");
-var won = document.createElement("div");
-document.body.appendChild(gamefield);
