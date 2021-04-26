@@ -34,6 +34,16 @@ class Voting
 
 
 
+    //get all comments from certain user
+    public static function getAllVotings() 
+    {
+        echo "bin in funktion getAllvotings";
+        $db = new DB();
+        $result = $db->fetchAllWithParams("voting", "Voting", array("id_voting", "username", "comment"));  
+        var_dump($result);
+        return $result;
+    }
+
 
      //get all comments from certain user
      public static function getAllCommentsOfWish($username) 

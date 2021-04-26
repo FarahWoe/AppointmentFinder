@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script src="client/js/appointmentFinder.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="client/css/appointmentFinder.css">
+
+    <title>Appointment Finder</title>
+</head>
+<body>
+    <div id="container">
+        <!--info-->
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm-9 bg-secondary">
+                <label for="seachfield" class="form-label">Available Names: "Doe" | "Smith"</label>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+
+        <!--Search field-->
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="seachfield" placeholder="Search via lastname">
+                    <button type="button" class="btn btn-success" id="btn_Search">Seach</button>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+
+
+        <!-- message -->
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm-9" id="searchResult">
+                <label for="noOfentries" class="form-label">Number of entries found:</label>
+                <input type="text" readonly class="form-control-plaintext" id="noOfentries">
+
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+</body>
+</html>
